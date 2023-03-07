@@ -8,7 +8,7 @@
 import UIKit
 
 class BillTableViewCell: UITableViewCell {
-
+//jhj
     @IBOutlet weak var billTitleLabel: UILabel!
     @IBOutlet weak var billCollectionView: UICollectionView!
     
