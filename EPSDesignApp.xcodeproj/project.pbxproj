@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB9E509929B6FC2000B1ADD4 /* BankCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9E509729B6FC2000B1ADD4 /* BankCollectionViewCell.swift */; };
+		BB9E509A29B6FC2000B1ADD4 /* BankCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB9E509829B6FC2000B1ADD4 /* BankCollectionViewCell.xib */; };
+		BB9E509F29B6FF7B00B1ADD4 /* UtilityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9E509D29B6FF7B00B1ADD4 /* UtilityCollectionViewCell.swift */; };
+		BB9E50A029B6FF7B00B1ADD4 /* UtilityCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB9E509E29B6FF7B00B1ADD4 /* UtilityCollectionViewCell.xib */; };
 		C124310F29B66171009CD38A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C124310E29B66171009CD38A /* AppDelegate.swift */; };
 		C124311129B66171009CD38A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C124311029B66171009CD38A /* SceneDelegate.swift */; };
 		C124311329B66171009CD38A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C124311229B66171009CD38A /* ViewController.swift */; };
@@ -20,6 +24,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BB9E509729B6FC2000B1ADD4 /* BankCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankCollectionViewCell.swift; sourceTree = "<group>"; };
+		BB9E509829B6FC2000B1ADD4 /* BankCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BankCollectionViewCell.xib; sourceTree = "<group>"; };
+		BB9E509D29B6FF7B00B1ADD4 /* UtilityCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilityCollectionViewCell.swift; sourceTree = "<group>"; };
+		BB9E509E29B6FF7B00B1ADD4 /* UtilityCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UtilityCollectionViewCell.xib; sourceTree = "<group>"; };
 		C124310B29B66171009CD38A /* EPSDesignApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EPSDesignApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C124310E29B66171009CD38A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C124311029B66171009CD38A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,8 +81,12 @@
 				C124311C29B66174009CD38A /* Info.plist */,
 				C124312329B66285009CD38A /* FundTableViewCell.xib */,
 				C124312729B66295009CD38A /* BillTableViewCell.xib */,
+				BB9E509829B6FC2000B1ADD4 /* BankCollectionViewCell.xib */,
+				BB9E509E29B6FF7B00B1ADD4 /* UtilityCollectionViewCell.xib */,
 				C124312229B66285009CD38A /* FundTableViewCell.swift */,
 				C124312629B66295009CD38A /* BillTableViewCell.swift */,
+				BB9E509729B6FC2000B1ADD4 /* BankCollectionViewCell.swift */,
+				BB9E509D29B6FF7B00B1ADD4 /* UtilityCollectionViewCell.swift */,
 			);
 			path = EPSDesignApp;
 			sourceTree = "<group>";
@@ -139,9 +151,11 @@
 			files = (
 				C124311B29B66174009CD38A /* LaunchScreen.storyboard in Resources */,
 				C124311829B66174009CD38A /* Assets.xcassets in Resources */,
+				BB9E509A29B6FC2000B1ADD4 /* BankCollectionViewCell.xib in Resources */,
 				C124312529B66285009CD38A /* FundTableViewCell.xib in Resources */,
 				C124312929B66295009CD38A /* BillTableViewCell.xib in Resources */,
 				C124311629B66171009CD38A /* Main.storyboard in Resources */,
+				BB9E50A029B6FF7B00B1ADD4 /* UtilityCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,6 +170,8 @@
 				C124310F29B66171009CD38A /* AppDelegate.swift in Sources */,
 				C124312429B66285009CD38A /* FundTableViewCell.swift in Sources */,
 				C124311129B66171009CD38A /* SceneDelegate.swift in Sources */,
+				BB9E509F29B6FF7B00B1ADD4 /* UtilityCollectionViewCell.swift in Sources */,
+				BB9E509929B6FC2000B1ADD4 /* BankCollectionViewCell.swift in Sources */,
 				C124312829B66295009CD38A /* BillTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

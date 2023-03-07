@@ -15,6 +15,10 @@ class BillTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        billCollectionView.register(UINib(nibName: "UtilityCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "UtilityCollectionViewCell")
+        billCollectionView.delegate = self
+        billCollectionView.dataSource = self
+        billCollectionView.reloadData()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -26,5 +30,19 @@ class BillTableViewCell: UITableViewCell {
     func setUI(title: String) {
         billTitleLabel.text = title
     }
+    
+}
+
+extension BillTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        10
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = billCollectionView.dequeueReusableCell(withReuseIdentifier: "UtilityCollectionViewCell", for: indexPath) as! UtilityCollectionViewCell
+        cell.setUI(utility: "Gas Bill")
+        return cell
+    }
+    
     
 }

@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -20,51 +17,46 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VMG-yt-CHN">
-                        <rect key="frame" x="0.0" y="5" width="329" height="20"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="20" id="Zk7-2t-C2v"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" name="AccentColor"/>
+                        <rect key="frame" x="0.0" y="15" width="329" height="5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="4f7-L3-ORm">
-                        <rect key="frame" x="0.0" y="30" width="329" height="85"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <rect key="frame" x="10" y="35" width="309" height="80"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="85" id="N7H-pN-IhD"/>
+                            <constraint firstAttribute="height" constant="80" id="aNw-g8-D76"/>
                         </constraints>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ebz-0L-i1o">
-                            <size key="itemSize" width="128" height="128"/>
+                            <size key="itemSize" width="70" height="70"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
+                        <connections>
+                            <outlet property="dataSource" destination="-1" id="Pyg-As-1hY"/>
+                            <outlet property="delegate" destination="-1" id="cAX-JE-Nxo"/>
+                        </connections>
                     </collectionView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="VMG-yt-CHN" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Ch8-0h-Sbn"/>
-                    <constraint firstItem="4f7-L3-ORm" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="NXX-th-FMO"/>
-                    <constraint firstItem="VMG-yt-CHN" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="PRP-5d-9DN"/>
-                    <constraint firstAttribute="trailing" secondItem="4f7-L3-ORm" secondAttribute="trailing" id="TEt-zH-NdA"/>
-                    <constraint firstItem="4f7-L3-ORm" firstAttribute="top" secondItem="VMG-yt-CHN" secondAttribute="bottom" constant="5" id="cQ0-Zh-9Pr"/>
+                    <constraint firstItem="4f7-L3-ORm" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="NXX-th-FMO"/>
+                    <constraint firstItem="VMG-yt-CHN" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="PRP-5d-9DN"/>
+                    <constraint firstAttribute="trailing" secondItem="4f7-L3-ORm" secondAttribute="trailing" constant="10" id="TEt-zH-NdA"/>
+                    <constraint firstAttribute="bottom" secondItem="4f7-L3-ORm" secondAttribute="bottom" constant="10" id="TXx-AK-zGr"/>
+                    <constraint firstItem="4f7-L3-ORm" firstAttribute="top" secondItem="VMG-yt-CHN" secondAttribute="bottom" constant="15" id="cQ0-Zh-9Pr"/>
                     <constraint firstAttribute="trailing" secondItem="VMG-yt-CHN" secondAttribute="trailing" id="oUT-Yc-oHF"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
-                <outlet property="billCollectionView" destination="4f7-L3-ORm" id="fF9-tJ-PPZ"/>
+                <outlet property="billCollectionView" destination="4f7-L3-ORm" id="hy0-wJ-l3f"/>
                 <outlet property="billTitleLabel" destination="VMG-yt-CHN" id="OhW-CW-m94"/>
             </connections>
-            <point key="canvasLocation" x="35.877862595419849" y="-65.140845070422543"/>
+            <point key="canvasLocation" x="-166" y="-21"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <namedColor name="AccentColor">
-            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>

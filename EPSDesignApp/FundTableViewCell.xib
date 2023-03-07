@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -16,41 +15,47 @@
                 <rect key="frame" x="0.0" y="0.0" width="329" height="125"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8z9-WL-b5s">
-                        <rect key="frame" x="0.0" y="5" width="329" height="25"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                        <nil key="textColor"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="Fund Transfer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8z9-WL-b5s">
+                        <rect key="frame" x="0.0" y="15" width="329" height="5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="gYh-2i-Ttq">
-                        <rect key="frame" x="0.0" y="35" width="329" height="80"/>
+                        <rect key="frame" x="10" y="35" width="319" height="80"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="80" id="bUu-Nc-6Tk"/>
                         </constraints>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="C7t-96-KJe">
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="C7t-96-KJe">
                             <size key="itemSize" width="128" height="128"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
+                        <connections>
+                            <outlet property="dataSource" destination="-1" id="ePB-jd-2mW"/>
+                            <outlet property="delegate" destination="-1" id="Wd2-qr-VAe"/>
+                        </connections>
                     </collectionView>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="gYh-2i-Ttq" secondAttribute="trailing" id="9um-aw-GqF"/>
-                    <constraint firstItem="gYh-2i-Ttq" firstAttribute="top" secondItem="8z9-WL-b5s" secondAttribute="bottom" constant="5" id="Iu6-G3-ojp"/>
+                    <constraint firstItem="gYh-2i-Ttq" firstAttribute="top" secondItem="8z9-WL-b5s" secondAttribute="bottom" constant="15" id="Iu6-G3-ojp"/>
                     <constraint firstItem="8z9-WL-b5s" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="KW4-MI-AvW"/>
                     <constraint firstAttribute="trailing" secondItem="8z9-WL-b5s" secondAttribute="trailing" id="ay6-dj-bFU"/>
-                    <constraint firstItem="8z9-WL-b5s" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="fZc-Bt-RiY"/>
-                    <constraint firstItem="gYh-2i-Ttq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="gLa-iD-iLJ"/>
+                    <constraint firstItem="8z9-WL-b5s" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="fZc-Bt-RiY"/>
+                    <constraint firstItem="gYh-2i-Ttq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="gLa-iD-iLJ"/>
                     <constraint firstAttribute="bottom" secondItem="gYh-2i-Ttq" secondAttribute="bottom" constant="10" id="xa7-Qc-pCc"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
             <connections>
                 <outlet property="fundCollectionView" destination="gYh-2i-Ttq" id="gcl-VE-Wwc"/>
                 <outlet property="fundtitleLabel" destination="8z9-WL-b5s" id="4V2-NG-8qF"/>
             </connections>
-            <point key="canvasLocation" x="-631" y="-123"/>
+            <point key="canvasLocation" x="-373" y="-133"/>
         </tableViewCell>
     </objects>
 </document>

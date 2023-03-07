@@ -12,9 +12,14 @@ class FundTableViewCell: UITableViewCell {
     @IBOutlet weak var fundtitleLabel: UILabel!
     @IBOutlet weak var fundCollectionView: UICollectionView!
     
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        fundCollectionView.register(UINib(nibName: "BankCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "BankCollectionViewCell")
+        fundCollectionView.delegate = self
+        fundCollectionView.dataSource = self
+        fundCollectionView.reloadData()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -26,4 +31,18 @@ class FundTableViewCell: UITableViewCell {
     func setUI(title: String) {
         fundtitleLabel.text = title
     }
+}
+
+extension FundTableViewCell : UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        5
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = fundCollectionView.dequeueReusableCell(withReuseIdentifier: "BankCollectionViewCell", for: indexPath) as! BankCollectionViewCell
+        cell.setUI(name: "DBBL")
+        return cell
+    }
+    
+    
 }
