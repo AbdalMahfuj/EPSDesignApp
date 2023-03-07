@@ -22,14 +22,14 @@
                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="4f7-L3-ORm">
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="4f7-L3-ORm">
                         <rect key="frame" x="10" y="35" width="309" height="80"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="80" id="aNw-g8-D76"/>
+                            <constraint firstAttribute="height" constant="80" id="lwB-zC-wgA"/>
                         </constraints>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ebz-0L-i1o">
-                            <size key="itemSize" width="70" height="70"/>
+                            <size key="itemSize" width="35" height="35"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -56,7 +56,7 @@
                 <outlet property="billCollectionView" destination="4f7-L3-ORm" id="hy0-wJ-l3f"/>
                 <outlet property="billTitleLabel" destination="VMG-yt-CHN" id="OhW-CW-m94"/>
             </connections>
-            <point key="canvasLocation" x="-166" y="-21"/>
+            <point key="canvasLocation" x="-517" y="-59"/>
         </tableViewCell>
     </objects>
 </document>

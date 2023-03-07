@@ -35,12 +35,12 @@ class BillTableViewCell: UITableViewCell {
 
 extension BillTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        10
+        20
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = billCollectionView.dequeueReusableCell(withReuseIdentifier: "UtilityCollectionViewCell", for: indexPath) as! UtilityCollectionViewCell
-        cell.setUI(utility: "Gas Bill")
+        cell.setUI(utility: "Gas")
         return cell
     }
     
