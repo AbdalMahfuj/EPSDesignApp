@@ -16,7 +16,8 @@ class BankCollectionViewCell: UICollectionViewCell {
         // Initialization code
     }
 
-    func setUI(name: String) {
+    func configure(name: String, color: UIColor) {
         bankLabel.text = name
+        self.backgroundColor = color
     }
 }

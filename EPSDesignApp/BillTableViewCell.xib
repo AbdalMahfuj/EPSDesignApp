@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -17,19 +19,19 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VMG-yt-CHN">
-                        <rect key="frame" x="0.0" y="15" width="329" height="5"/>
+                        <rect key="frame" x="0.0" y="15" width="329" height="15"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="4f7-L3-ORm">
-                        <rect key="frame" x="10" y="35" width="309" height="80"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="4f7-L3-ORm" customClass="DynamicHeightCollectionView" customModule="EPSDesignApp" customModuleProvider="target">
+                        <rect key="frame" x="10" y="40" width="309" height="80"/>
+                        <color key="backgroundColor" systemColor="systemRedColor"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="80" id="lwB-zC-wgA"/>
+                            <constraint firstAttribute="height" constant="80" id="6jr-rP-0OV"/>
                         </constraints>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ebz-0L-i1o">
-                            <size key="itemSize" width="35" height="35"/>
+                            <size key="itemSize" width="50" height="50"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -41,13 +43,15 @@
                     </collectionView>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="bottom" secondItem="4f7-L3-ORm" secondAttribute="bottom" constant="5" id="0fm-0j-QGq"/>
+                    <constraint firstItem="4f7-L3-ORm" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="847-h3-xKc"/>
+                    <constraint firstAttribute="trailing" secondItem="4f7-L3-ORm" secondAttribute="trailing" constant="10" id="A1O-c1-1Im"/>
                     <constraint firstItem="VMG-yt-CHN" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Ch8-0h-Sbn"/>
                     <constraint firstItem="4f7-L3-ORm" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="NXX-th-FMO"/>
                     <constraint firstItem="VMG-yt-CHN" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="PRP-5d-9DN"/>
                     <constraint firstAttribute="trailing" secondItem="4f7-L3-ORm" secondAttribute="trailing" constant="10" id="TEt-zH-NdA"/>
-                    <constraint firstAttribute="bottom" secondItem="4f7-L3-ORm" secondAttribute="bottom" constant="10" id="TXx-AK-zGr"/>
-                    <constraint firstItem="4f7-L3-ORm" firstAttribute="top" secondItem="VMG-yt-CHN" secondAttribute="bottom" constant="15" id="cQ0-Zh-9Pr"/>
                     <constraint firstAttribute="trailing" secondItem="VMG-yt-CHN" secondAttribute="trailing" id="oUT-Yc-oHF"/>
+                    <constraint firstItem="4f7-L3-ORm" firstAttribute="top" secondItem="VMG-yt-CHN" secondAttribute="bottom" constant="10" id="pIy-Vq-SKg"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -56,7 +60,12 @@
                 <outlet property="billCollectionView" destination="4f7-L3-ORm" id="hy0-wJ-l3f"/>
                 <outlet property="billTitleLabel" destination="VMG-yt-CHN" id="OhW-CW-m94"/>
             </connections>
-            <point key="canvasLocation" x="-517" y="-59"/>
+            <point key="canvasLocation" x="89" y="-60"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

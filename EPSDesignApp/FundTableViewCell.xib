@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -17,12 +18,12 @@
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="Fund Transfer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8z9-WL-b5s">
                         <rect key="frame" x="0.0" y="15" width="329" height="5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="gYh-2i-Ttq">
-                        <rect key="frame" x="10" y="35" width="319" height="80"/>
+                        <rect key="frame" x="10" y="35" width="309" height="80"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="80" id="bUu-Nc-6Tk"/>
@@ -40,7 +41,7 @@
                     </collectionView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="gYh-2i-Ttq" secondAttribute="trailing" id="9um-aw-GqF"/>
+                    <constraint firstAttribute="trailing" secondItem="gYh-2i-Ttq" secondAttribute="trailing" constant="10" id="9um-aw-GqF"/>
                     <constraint firstItem="gYh-2i-Ttq" firstAttribute="top" secondItem="8z9-WL-b5s" secondAttribute="bottom" constant="15" id="Iu6-G3-ojp"/>
                     <constraint firstItem="8z9-WL-b5s" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="KW4-MI-AvW"/>
                     <constraint firstAttribute="trailing" secondItem="8z9-WL-b5s" secondAttribute="trailing" id="ay6-dj-bFU"/>

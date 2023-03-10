@@ -8,13 +8,6 @@
 import UIKit
 
 class UtilityCollectionViewCell: UICollectionViewCell {
-  
-    var itemWidth:CGFloat = 0
-    var itemHeight:CGFloat = 0
-    var interSpace:CGFloat = 12 // act as middle gap between cell in case of vertical collection, and as line space in case of horizontal collection
-    var lineSpace:CGFloat = 20  // inverse case
-    var padding:CGFloat = 10
-    let numberOfItemsInRow:CGFloat = UIDevice.current.userInterfaceIdiom == .pad ? 4 : 3
     
     @IBOutlet weak var utilityLabel: UILabel!
     

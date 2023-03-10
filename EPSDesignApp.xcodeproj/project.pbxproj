@@ -79,14 +79,14 @@
 				C124311729B66174009CD38A /* Assets.xcassets */,
 				C124311929B66174009CD38A /* LaunchScreen.storyboard */,
 				C124311C29B66174009CD38A /* Info.plist */,
-				C124312329B66285009CD38A /* FundTableViewCell.xib */,
-				C124312729B66295009CD38A /* BillTableViewCell.xib */,
-				BB9E509829B6FC2000B1ADD4 /* BankCollectionViewCell.xib */,
-				BB9E509E29B6FF7B00B1ADD4 /* UtilityCollectionViewCell.xib */,
 				C124312229B66285009CD38A /* FundTableViewCell.swift */,
-				C124312629B66295009CD38A /* BillTableViewCell.swift */,
+				C124312329B66285009CD38A /* FundTableViewCell.xib */,
 				BB9E509729B6FC2000B1ADD4 /* BankCollectionViewCell.swift */,
+				BB9E509829B6FC2000B1ADD4 /* BankCollectionViewCell.xib */,
+				C124312629B66295009CD38A /* BillTableViewCell.swift */,
+				C124312729B66295009CD38A /* BillTableViewCell.xib */,
 				BB9E509D29B6FF7B00B1ADD4 /* UtilityCollectionViewCell.swift */,
+				BB9E509E29B6FF7B00B1ADD4 /* UtilityCollectionViewCell.xib */,
 			);
 			path = EPSDesignApp;
 			sourceTree = "<group>";
