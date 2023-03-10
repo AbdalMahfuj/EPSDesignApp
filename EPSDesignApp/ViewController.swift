@@ -20,6 +20,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         myTableView.register(UINib(nibName: "FundTableViewCell", bundle: nil), forCellReuseIdentifier: "FundTableViewCell")
         myTableView.register(UINib(nibName: "BillTableViewCell", bundle: nil), forCellReuseIdentifier: "BillTableViewCell")
+        self.myTableView.estimatedRowHeight = 100
         myTableView.reloadData()
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1){
@@ -42,6 +43,7 @@ extension ViewController : UITableViewDataSource, UITableViewDelegate {
 //        section == 0 ? 3 : 4
     }
     
+    // cellForRowAt
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             let cell = myTableView.dequeueReusableCell(withIdentifier: "FundTableViewCell", for: indexPath) as! FundTableViewCell
@@ -50,10 +52,13 @@ extension ViewController : UITableViewDataSource, UITableViewDelegate {
             return cell
         } else {
             let cell = myTableView.dequeueReusableCell(withIdentifier: "BillTableViewCell", for: indexPath) as! BillTableViewCell
-            myTableView.estimatedRowHeight = 44
-            myTableView.rowHeight = UITableView.automaticDimension
+            cell.billCollectionView.reloadData()
             cell.setUI(title: secCellTtile)
             return cell
         }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
     }
 }

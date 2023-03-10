@@ -21,6 +21,7 @@
 		C124312529B66285009CD38A /* FundTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C124312329B66285009CD38A /* FundTableViewCell.xib */; };
 		C124312829B66295009CD38A /* BillTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C124312629B66295009CD38A /* BillTableViewCell.swift */; };
 		C124312929B66295009CD38A /* BillTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C124312729B66295009CD38A /* BillTableViewCell.xib */; };
+		C197674629BB971B0037EA5C /* DynamicHeightCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C197674529BB971B0037EA5C /* DynamicHeightCollectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		C124312329B66285009CD38A /* FundTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FundTableViewCell.xib; sourceTree = "<group>"; };
 		C124312629B66295009CD38A /* BillTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillTableViewCell.swift; sourceTree = "<group>"; };
 		C124312729B66295009CD38A /* BillTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BillTableViewCell.xib; sourceTree = "<group>"; };
+		C197674529BB971B0037EA5C /* DynamicHeightCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicHeightCollectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 				C124312729B66295009CD38A /* BillTableViewCell.xib */,
 				BB9E509D29B6FF7B00B1ADD4 /* UtilityCollectionViewCell.swift */,
 				BB9E509E29B6FF7B00B1ADD4 /* UtilityCollectionViewCell.xib */,
+				C197674529BB971B0037EA5C /* DynamicHeightCollectionView.swift */,
 			);
 			path = EPSDesignApp;
 			sourceTree = "<group>";
@@ -169,6 +172,7 @@
 				C124311329B66171009CD38A /* ViewController.swift in Sources */,
 				C124310F29B66171009CD38A /* AppDelegate.swift in Sources */,
 				C124312429B66285009CD38A /* FundTableViewCell.swift in Sources */,
+				C197674629BB971B0037EA5C /* DynamicHeightCollectionView.swift in Sources */,
 				C124311129B66171009CD38A /* SceneDelegate.swift in Sources */,
 				BB9E509F29B6FF7B00B1ADD4 /* UtilityCollectionViewCell.swift in Sources */,
 				BB9E509929B6FC2000B1ADD4 /* BankCollectionViewCell.swift in Sources */,

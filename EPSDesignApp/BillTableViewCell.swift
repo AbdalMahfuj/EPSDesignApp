@@ -11,12 +11,13 @@ class BillTableViewCell: UITableViewCell {
    
     @IBOutlet weak var billTitleLabel: UILabel!
     @IBOutlet weak var billCollectionView: UICollectionView!
+    @IBOutlet weak var billCollectionViewHeight: NSLayoutConstraint!
     
-    func createCollectionViewFlowLayout() -> UICollectionViewFlowLayout {
+    /*func createCollectionViewFlowLayout() -> UICollectionViewFlowLayout {
         let screenWidth              = UIScreen.main.bounds.width - 20 // 20 is collectionView's trailing,leading
         let padding: CGFloat                = 0
         let minimumInterimSpacing: CGFloat  = 10
-        let minimumLineSpace:CGFloat        = 20
+        let minimumLineSpace:CGFloat        = 10
         
         // Updated this to a var
         var availableWidth                  = 0.0
@@ -31,7 +32,7 @@ class BillTableViewCell: UITableViewCell {
             numberOfColumn = 3
         }
         
-        availableWidth = screenWidth - (padding * 2) - (minimumInterimSpacing * (numberOfColumn - 1))
+        availableWidth = screenWidth - (padding * 2) - (minimumLineSpace * (numberOfColumn - 1))
         
         let itemWidth                       = availableWidth / numberOfColumn
         print(numberOfColumn)
@@ -44,15 +45,14 @@ class BillTableViewCell: UITableViewCell {
         flowLayout.itemSize                 = CGSize(width: itemWidth, height: itemWidth)
         print(itemWidth)
         return flowLayout
-    }
+    } */
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
         billCollectionView.register(UINib(nibName: "UtilityCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "UtilityCollectionViewCell")
         billCollectionView.delegate = self
         billCollectionView.dataSource = self
-        billCollectionView.collectionViewLayout = createCollectionViewFlowLayout()
+        //billCollectionView.collectionViewLayout = createCollectionViewFlowLayout()
         billCollectionView.reloadData()
     }
 
@@ -68,7 +68,7 @@ class BillTableViewCell: UITableViewCell {
     
 }
 
-extension BillTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
+extension BillTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         20
     }
@@ -76,9 +76,15 @@ extension BillTableViewCell: UICollectionViewDelegate, UICollectionViewDataSourc
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = billCollectionView.dequeueReusableCell(withReuseIdentifier: "UtilityCollectionViewCell", for: indexPath) as! UtilityCollectionViewCell
+        //cell.frame.height = ceil(20.0/4.0) * 192.5
         cell.setUI(utility: "Gas")
         return cell
     }
     
+    // sizeForItemAt
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        return CGSize(width: billCollectionView.frame.size.width , height: billCollectionView.frame.size.width * 2)
+//    }
+
     
 }

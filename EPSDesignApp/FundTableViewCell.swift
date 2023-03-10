@@ -21,7 +21,7 @@ class FundTableViewCell: UITableViewCell {
         let screenWidth              = UIScreen.main.bounds.width - 20 // 20 is collectionView's trailing,leading
         let padding: CGFloat                = 0
         let minimumInterimSpacing: CGFloat  = 10
-        let minimumLineSpace:CGFloat        = 20
+        let minimumLineSpace:CGFloat        = 10
         
         // Updated this to a var
         var availableWidth                  = 0.0
