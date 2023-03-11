@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     let secCellTtile = "Bill Pay"
     var colors = [UIColor]()
     var banks = [String]()
+    var utility = [String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +27,9 @@ class ViewController: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1){
             self.colors = [UIColor.green, UIColor.red, UIColor.gray, UIColor.yellow, UIColor.blue, UIColor.red, UIColor.gray, UIColor.cyan, UIColor.brown]
             self.banks = ["DBBL", "UCB", "Sonali", "Rupali", "City", "IFIC", "Islami", "Jamuna", "Janata"]
+            self.utility = ["Gas", "Water", "Electricity",
+                            "Net", "Dish", "Telephone",
+                            "Trash", "Streaming", "Recycling"]
             self.myTableView.reloadData()
         }
     }
@@ -40,7 +44,6 @@ extension ViewController : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
             2
-//        section == 0 ? 3 : 4
     }
     
     // cellForRowAt
@@ -53,7 +56,7 @@ extension ViewController : UITableViewDataSource, UITableViewDelegate {
         } else {
             let cell = myTableView.dequeueReusableCell(withIdentifier: "BillTableViewCell", for: indexPath) as! BillTableViewCell
             cell.billCollectionView.reloadData()
-            cell.setUI(title: secCellTtile)
+            cell.config(utility: utility)
             return cell
         }
     }

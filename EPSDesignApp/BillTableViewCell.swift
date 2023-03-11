@@ -12,19 +12,19 @@ class BillTableViewCell: UITableViewCell {
     @IBOutlet weak var billTitleLabel: UILabel!
     @IBOutlet weak var billCollectionView: UICollectionView!
     @IBOutlet weak var billCollectionViewHeight: NSLayoutConstraint!
+    var utility = [String]()
     
-    /*func createCollectionViewFlowLayout() -> UICollectionViewFlowLayout {
+    func createCollectionViewFlowLayout() -> UICollectionViewFlowLayout {
         let screenWidth              = UIScreen.main.bounds.width - 20 // 20 is collectionView's trailing,leading
         let padding: CGFloat                = 0
-        let minimumInterimSpacing: CGFloat  = 10
+        let minimumInterimSpacing: CGFloat  = 0
         let minimumLineSpace:CGFloat        = 10
         
         // Updated this to a var
-        var availableWidth                  = 0.0
+        var availableWidth : CGFloat        = 0.0
         
-        var numberOfColumn: CGFloat
+        var numberOfColumn: CGFloat         = 0.0
         
-        // 375 is iPhone SE width
         if UIDevice.current.userInterfaceIdiom == .pad {
             numberOfColumn = 4
             // Update the width available as well
@@ -35,8 +35,15 @@ class BillTableViewCell: UITableViewCell {
         availableWidth = screenWidth - (padding * 2) - (minimumLineSpace * (numberOfColumn - 1))
         
         let itemWidth                       = availableWidth / numberOfColumn
-        print(numberOfColumn)
-        print(itemWidth)
+        
+        // collectionview height calculation
+        var timeOfHeight:CGFloat = CGFloat(9/numberOfColumn)
+        timeOfHeight = ceil(timeOfHeight)
+        let cc :Int = Int(timeOfHeight)
+        print("timeOfHeight: \(Int(cc))")
+        
+        billCollectionViewHeight.constant = itemWidth * CGFloat(cc)
+
         let flowLayout                      = UICollectionViewFlowLayout()
         flowLayout.scrollDirection = .vertical
         flowLayout.minimumInteritemSpacing  = minimumInterimSpacing
@@ -45,14 +52,14 @@ class BillTableViewCell: UITableViewCell {
         flowLayout.itemSize                 = CGSize(width: itemWidth, height: itemWidth)
         print(itemWidth)
         return flowLayout
-    } */
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()
         billCollectionView.register(UINib(nibName: "UtilityCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "UtilityCollectionViewCell")
         billCollectionView.delegate = self
         billCollectionView.dataSource = self
-        //billCollectionView.collectionViewLayout = createCollectionViewFlowLayout()
+        billCollectionView.collectionViewLayout = createCollectionViewFlowLayout()
         billCollectionView.reloadData()
     }
 
@@ -62,22 +69,22 @@ class BillTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setUI(title: String) {
-        billTitleLabel.text = title
+    func config(utility: [String]) {
+        self.utility = utility
+        billCollectionView.reloadData()
     }
     
 }
 
 extension BillTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        20
+        utility.count
     }
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = billCollectionView.dequeueReusableCell(withReuseIdentifier: "UtilityCollectionViewCell", for: indexPath) as! UtilityCollectionViewCell
-        //cell.frame.height = ceil(20.0/4.0) * 192.5
-        cell.setUI(utility: "Gas")
+        cell.setUI(utility: utility[indexPath.row])
         return cell
     }
     

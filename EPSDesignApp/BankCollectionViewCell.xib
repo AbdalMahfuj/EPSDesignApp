@@ -35,7 +35,7 @@
             <connections>
                 <outlet property="bankLabel" destination="KRi-53-SnQ" id="g2o-vq-ZY1"/>
             </connections>
-            <point key="canvasLocation" x="-60.869565217391312" y="-49.21875"/>
+            <point key="canvasLocation" x="-275" y="17"/>
         </collectionViewCell>
     </objects>
     <resources>

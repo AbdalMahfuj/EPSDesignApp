@@ -24,21 +24,20 @@ class FundTableViewCell: UITableViewCell {
         let minimumLineSpace:CGFloat        = 10
         
         // Updated this to a var
-        var availableWidth                  = 0.0
+        var availableWidth : CGFloat                 = 0.0
         
         var numberOfColumn: CGFloat
         
-        // 375 is iPhone SE width
         if UIDevice.current.userInterfaceIdiom == .pad {
             numberOfColumn = 4
             // Update the width available as well
-        } else {
+        } else { // in case of iPhone
             numberOfColumn = 3
         }
         
         availableWidth = screenWidth - (padding * 2) - (minimumLineSpace * (numberOfColumn - 1))
         
-        let itemWidth                       = availableWidth / numberOfColumn
+        let itemWidth                       = (availableWidth / numberOfColumn)
         print(numberOfColumn)
         
         let flowLayout                      = UICollectionViewFlowLayout()
