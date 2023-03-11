@@ -24,7 +24,7 @@ class ViewController: UIViewController {
         self.myTableView.estimatedRowHeight = 100
         myTableView.reloadData()
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1){
+        DispatchQueue.main.asyncAfter(deadline: .now()){
             self.colors = [UIColor.green, UIColor.red, UIColor.gray, UIColor.yellow, UIColor.blue, UIColor.red, UIColor.gray, UIColor.cyan, UIColor.brown]
             self.banks = ["DBBL", "UCB", "Sonali", "Rupali", "City", "IFIC", "Islami", "Jamuna", "Janata"]
             self.utility = ["Gas", "Water", "Electricity",
@@ -51,7 +51,6 @@ extension ViewController : UITableViewDataSource, UITableViewDelegate {
         if indexPath.row == 0 {
             let cell = myTableView.dequeueReusableCell(withIdentifier: "FundTableViewCell", for: indexPath) as! FundTableViewCell
             cell.config(banks: banks,colors: colors)
-//            cell.contentView.backgroundColor = indexPath.section == 0 ? .red : .yellow
             return cell
         } else {
             let cell = myTableView.dequeueReusableCell(withIdentifier: "BillTableViewCell", for: indexPath) as! BillTableViewCell
