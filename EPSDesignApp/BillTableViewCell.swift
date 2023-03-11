@@ -36,7 +36,7 @@ class BillTableViewCell: UITableViewCell {
         
         let itemWidth                       = availableWidth / numberOfColumn
         
-        // collectionview height calculation
+        // vertical collectionview height calculation
         var timeOfHeight:CGFloat = CGFloat(9/numberOfColumn)
         timeOfHeight = ceil(timeOfHeight)
         let cc :Int = Int(timeOfHeight)
