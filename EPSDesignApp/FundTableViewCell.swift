@@ -9,7 +9,6 @@ import UIKit
 
 class FundTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var fundtitleLabel: UILabel!
     @IBOutlet weak var fundCollectionView: UICollectionView!
     var screenSize: CGRect!
     var screenWidth: CGFloat!
@@ -21,7 +20,7 @@ class FundTableViewCell: UITableViewCell {
         let screenWidth              = UIScreen.main.bounds.width - 20 // 20 is collectionView's trailing,leading
         let padding: CGFloat                = 0
         let minimumInterimSpacing: CGFloat  = 10
-        let minimumLineSpace:CGFloat        = 10
+        let minimumLineSpace:CGFloat        = 10 // act as inter space in horizontal scrolling
         
         // Updated this to a var
         var availableWidth : CGFloat                 = 0.0
@@ -29,10 +28,10 @@ class FundTableViewCell: UITableViewCell {
         var numberOfColumn: CGFloat
         
         if UIDevice.current.userInterfaceIdiom == .pad {
-            numberOfColumn = 4
+            numberOfColumn = 3.5
             // Update the width available as well
         } else { // in case of iPhone
-            numberOfColumn = 3
+            numberOfColumn = 2.5
         }
         
         availableWidth = screenWidth - (padding * 2) - (minimumLineSpace * (numberOfColumn - 1))
@@ -52,7 +51,6 @@ class FundTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
         fundCollectionView.register(UINib(nibName: "BankCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "BankCollectionViewCell")
         fundCollectionView.delegate = self
         fundCollectionView.dataSource = self
@@ -60,16 +58,15 @@ class FundTableViewCell: UITableViewCell {
         fundCollectionView.reloadData()
     }
     
-    func config(banks: [String], colors: [UIColor]) {
+    func config(banks: [String]) {
         self.banks = banks
-        self.colors = colors
         fundCollectionView.reloadData()
     }
 }
 
 extension FundTableViewCell : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        colors.count
+        banks.count
     }
     
     //sizeForItemAt
@@ -89,7 +86,7 @@ extension FundTableViewCell : UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = fundCollectionView.dequeueReusableCell(withReuseIdentifier: "BankCollectionViewCell", for: indexPath) as! BankCollectionViewCell
-        cell.configure(name: banks[indexPath.row], color: colors[indexPath.row])
+        cell.configCollectionView(name: banks[indexPath.row])
         return cell
     }
     

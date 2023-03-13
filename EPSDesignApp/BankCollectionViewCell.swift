@@ -9,15 +9,14 @@ import UIKit
 
 class BankCollectionViewCell: UICollectionViewCell {
 
-    @IBOutlet weak var bankLabel: UILabel!
+    @IBOutlet weak var bankImg: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
-    func configure(name: String, color: UIColor) {
-        bankLabel.text = name
-        self.backgroundColor = color
+    func configCollectionView(name: String) {
+        bankImg.image = UIImage(named: name)
     }
 }

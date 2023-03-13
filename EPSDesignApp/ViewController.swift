@@ -22,14 +22,13 @@ class ViewController: UIViewController {
         myTableView.register(UINib(nibName: "FundTableViewCell", bundle: nil), forCellReuseIdentifier: "FundTableViewCell")
         myTableView.register(UINib(nibName: "BillTableViewCell", bundle: nil), forCellReuseIdentifier: "BillTableViewCell")
         self.myTableView.estimatedRowHeight = 100
-        myTableView.reloadData()
         
-        DispatchQueue.main.asyncAfter(deadline: .now()){
+        DispatchQueue.main.asyncAfter(deadline: .now() ){
             self.colors = [UIColor.green, UIColor.red, UIColor.gray, UIColor.yellow, UIColor.blue, UIColor.red, UIColor.gray, UIColor.cyan, UIColor.brown]
             self.banks = ["DBBL", "UCB", "Sonali", "Rupali", "City", "IFIC", "Islami", "Jamuna", "Janata"]
             self.utility = ["Gas", "Water", "Electricity",
-                            "Net", "Dish", "Telephone",
-                            "Trash", "Streaming", "Recycling"]
+                            "Internet", "Recharge", "Phone",
+                            "School", "Others"]
             self.myTableView.reloadData()
         }
     }
@@ -50,7 +49,7 @@ extension ViewController : UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             let cell = myTableView.dequeueReusableCell(withIdentifier: "FundTableViewCell", for: indexPath) as! FundTableViewCell
-            cell.config(banks: banks,colors: colors)
+            cell.config(banks: banks)
             return cell
         } else {
             let cell = myTableView.dequeueReusableCell(withIdentifier: "BillTableViewCell", for: indexPath) as! BillTableViewCell

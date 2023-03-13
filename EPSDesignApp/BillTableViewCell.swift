@@ -53,7 +53,7 @@ class BillTableViewCell: UITableViewCell {
         flowLayout.scrollDirection = .vertical
         flowLayout.minimumInteritemSpacing  = minimumInterimSpacing
         flowLayout.minimumLineSpacing       = minimumLineSpace
-        flowLayout.sectionInset             = .zero//UIEdgeInsets(top: padding, left: padding, bottom: padding, right: padding)
+        flowLayout.sectdionInset             = .zero//UIEdgeInsets(top: padding, left: padding, bottom: padding, right: padding)
         flowLayout.itemSize                 = CGSize(width: itemWidth, height: itemWidth)
         print(itemWidth)
         return flowLayout
@@ -77,15 +77,11 @@ class BillTableViewCell: UITableViewCell {
         itemWidth = (UIScreen.main.bounds.width - 20 - 2.0 * padding - (numberOfColumn - 1.0) * interGap) / numberOfColumn
         itemHeight = itemWidth
         let rowsAndLines = rowAndLine(columns: Int(numberOfColumn), totalItem: utility.count)
-        print("row needed: \(rowsAndLines.0)")
-        print("line gap needed: \(rowsAndLines.1)")
-        
         billCollectionViewHeight.constant = CGFloat(rowsAndLines.0) * itemHeight + CGFloat(rowsAndLines.1) * lineGap
-
         billCollectionView.reloadData()
     }
     
-    // calculate #row and #line gap
+    /* calculate #row and #line gap  */
     func rowAndLine(columns: Int, totalItem: Int)->(Int, Int){
         let itemRow =  ceil((CGFloat(totalItem)/CGFloat(columns)))
         return (Int(itemRow), Int(itemRow-1))
@@ -124,4 +120,5 @@ extension BillTableViewCell: UICollectionViewDelegate, UICollectionViewDataSourc
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         UIEdgeInsets(top: 5, left: padding, bottom: 0, right: padding)
     }
+    
 }
